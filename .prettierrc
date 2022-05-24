@@ -3,6 +3,5 @@
   "printWidth": 100,
   "singleQuote": true,
   "jsxSingleQuote": false,
-  "bracketSpacing": true,
-  "endOfLine": "auto"
+  "bracketSpacing": true
 }
