@@ -1,5 +1,5 @@
-import Main from './Main';
-import Secondary from './Secodary';
+import Main from './components/Main';
+import Secondary from './components/Secodary';
 
 function App() {
   return (
