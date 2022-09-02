@@ -1,12 +1,20 @@
-import Main from './components/Main';
-import Secondary from './components/Secodary';
+import { useEffect, useState } from 'react';
+import InputArray from './components/Main';
 
 function App() {
+  const [notes, setNotes] = useState<string[]>(['Test 1', 'Test 2']);
+
+  useEffect(() => {
+    console.log(notes);
+  }, [notes]);
+
   return (
-    <>
-      <Main id="1" name="Rudolf" />
-      <Secondary id="1" name="Rudolf" />
-    </>
+    <InputArray
+      values={notes}
+      onValueChange={(changedValues) => {
+        setNotes(changedValues);
+      }}
+    />
   );
 }
 
