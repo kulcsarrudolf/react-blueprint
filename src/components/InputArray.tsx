@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { getKey } from '../utils';
 import { InputArrayContainer, InputArrayElement, InputArrayInput } from './InputArray.style';
 
 type InputArrayProps = {
@@ -39,7 +40,7 @@ const InputArray = ({ values, onValueChange }: InputArrayProps) => {
   return (
     <InputArrayContainer>
       {internValues.map((value, idx) => (
-        <InputArrayElement key={`key-${idx}`}>
+        <InputArrayElement key={getKey()}>
           <InputArrayInput
             type="text"
             value={value}
