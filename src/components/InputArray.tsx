@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { InputArrayContainer, InputArrayElement, InputArrayInput } from './InputArray.style';
 
 type InputArrayProps = {
   values: string[];
@@ -36,27 +37,19 @@ const InputArray = ({ values, onValueChange }: InputArrayProps) => {
   };
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        backgroundColor: 'yellowgreen',
-      }}
-    >
-      {internValues.map((v, idx) => (
-        <div key={`key-${idx}`} style={{ margin: '0.5rem' }}>
-          <input
-            style={{ margin: '0', padding: '0.5rem', fontWeight: 'bold', width: '100%' }}
-            type="text "
-            value={v}
+    <InputArrayContainer>
+      {internValues.map((value, idx) => (
+        <InputArrayElement key={`key-${idx}`}>
+          <InputArrayInput
+            type="text"
+            value={value}
             onChange={(event) => {
               onChange(event, idx);
             }}
           />
-        </div>
+        </InputArrayElement>
       ))}
-    </div>
+    </InputArrayContainer>
   );
 };
 
