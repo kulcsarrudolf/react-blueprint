@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
-import InputArray from './components/Main';
+import InputArray from './components/InputArray';
+import './styles/styles.css';
 
 function App() {
   const [notes, setNotes] = useState<string[]>(['Test 1', 'Test 2']);
 
   useEffect(() => {
-    console.log(notes);
+    // TODO: init notes
   }, [notes]);
 
   return (
