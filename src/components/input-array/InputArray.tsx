@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
+import TextField from '../text-field';
 import { InputArrayContainer, InputArrayElement } from './InputArray.style';
-import { TextField } from './TextField';
 
 type InputArrayProps = {
   values: string[];
@@ -43,7 +43,7 @@ const InputArray = ({ values, onValueChange }: InputArrayProps) => {
         <InputArrayElement key={`key-${idx}`}>
           <TextField
             value={value}
-            onChange={(event) => {
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
               onChange(event, idx);
             }}
           />

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import InputArray from './components/InputArray';
+import { InputArray } from './components';
 import './styles/styles.css';
 
 function App() {

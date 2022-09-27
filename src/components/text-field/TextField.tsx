@@ -5,7 +5,7 @@ type TextFieldProps = {
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-export const TextField = ({ value, onChange }: TextFieldProps) => (
+const TextField = ({ value, onChange }: TextFieldProps) => (
   <Input type="text" onChange={onChange} value={value} />
 );
 
