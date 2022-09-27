@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { InputArrayContainer, InputArrayElement, InputArrayInput } from './InputArray.style';
+import { InputArrayContainer, InputArrayElement } from './InputArray.style';
+import { TextField } from './TextField';
 
 type InputArrayProps = {
   values: string[];
@@ -16,7 +17,7 @@ const InputArray = ({ values, onValueChange }: InputArrayProps) => {
     setInternValues([...values, '']);
   }, []);
 
-  const onChange = (event: any, idx: number) => {
+  const onChange = (event: React.ChangeEvent<HTMLInputElement>, idx: number) => {
     const currentValue: string = event.target.value;
     const valuesMirror: string[] = [...internValues];
 
@@ -38,10 +39,9 @@ const InputArray = ({ values, onValueChange }: InputArrayProps) => {
 
   return (
     <InputArrayContainer>
-      {internValues.map((value, idx) => (
+      {internValues.map((value: string, idx: number) => (
         <InputArrayElement key={`key-${idx}`}>
-          <InputArrayInput
-            type="text"
+          <TextField
             value={value}
             onChange={(event) => {
               onChange(event, idx);
