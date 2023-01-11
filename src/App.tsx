@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { InputArray } from './components';
-import './styles/styles.css';
 
 function App() {
   const [notes, setNotes] = useState<string[]>(['Test 1', 'Test 2']);
